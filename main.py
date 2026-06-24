@@ -157,7 +157,7 @@ def position(name):
 def create_order():
     basket = session.get('basket')
     if len(basket) > 10:
-        return render_template("over_ten_basket.html")
+        return render_template("over_ten_basket.html", length=len(basket))
            
     if request.method == 'POST':
 
