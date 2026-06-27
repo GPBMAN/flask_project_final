@@ -194,7 +194,8 @@ def change_order():
                 flash("Ваш кошик порожній")
             else:
                 name = request.form.get("name")
-                new_amount = request.form.get("num")
+                new_amount = int(request.form.get("num"))
+                app.logger.info(f"{name}'s values is changing to {new_amount}")
 
                 if new_amount == 0:
                     app.logger.info(f"new_amount = 0, deleting {name}")
